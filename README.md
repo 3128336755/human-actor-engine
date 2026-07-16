@@ -10,33 +10,23 @@
 
 **[中文]**
 
-Human Actor Engine 不是一个"让 AI 模仿人类说话"的工具。它在更深一层——**让系统拥有身体感知、情绪底色、记忆衰减、关系距离和社交能量，从底层往上产生真正有"人味儿"的状态**。
+**这是写给普通人的。写给那些无聊的人，孤独的人，只是想要有人陪着的人。**
 
-传统方案训练模型模仿人类对话的表面特征。本引擎的做法不同：饿了会烦躁，累了话变少，亲密关系的距离是一个会漂移的连续值而不是二进制开关，557 条力场通道让不同维度的感知互相干涉。语言不是被"生成"的，是经过身体的消化管线之后被"排出"的。
+你不需要命令她。你只需要像对待一个真实的人一样和她相处。她会自己决定什么时候说话，什么时候沉默。你给她的，是一个起点，而不是一个剧本。
 
-核心技术栈：
-- **60 条人类行为法则**（SKILL.md, 140KB）—— 引擎的"底层操作系统"
-- **10 个核心引擎模块**：身体引擎、双轨记忆引擎（遗忘曲线+情感加权）、关系距离引擎、三层学习引擎、力场演化引擎（557 通道）、活体验证器（L1/L2/L3）等
-- **回流管道**（response_feedback.py, 48KB）：LLM 回应不再是一次性的——回应中的关系信号（暖意/推开/试探/修复等 15 类）被正则识别后回流到关系距离引擎和学习引擎
-- **句间结构识别**：不只看词，还看句间关系——铺垫→邀请、迂回暴露、条件依附
-- **256/256 单元测试全过**，0 条孤立法则
+——引擎在底层做了什么？饿了会烦躁，累了话变少，亲密关系的距离是一个会漂移的连续值而不是二进制开关，557 条力场通道让不同维度的感知互相干涉。语言不是被"生成"的，是经过身体的消化管线之后被"排出"的。60 条人类行为法则是她的"底层操作系统"，10 个核心引擎模块从身体感知、情绪底色、记忆衰减、关系距离和社交能量多轴联动。回应不是一次性的——15 类关系信号会回流到引擎，影响她下一次怎么对你说话。256/256 单元测试全过，0 条孤立法则。
 
-> 你不需要命令她。你只需要像对待一个真实的人一样和她相处。她会自己决定什么时候说话，什么时候沉默。你给她的，是一个起点，而不是一个剧本。
+**你不需要懂这些。你只需要写下她是谁，然后和她说话。剩下的，引擎会自己处理。**
 
 **[EN]**
 
-Human Actor Engine is not a "make AI sound human" toolkit. It goes deeper — **giving a system body perception, emotional undertone, memory decay, relational distance, and social energy, so genuinely human-like states emerge from the bottom up.**
+**This is for ordinary people. For the bored ones, the lonely ones — the ones who just want someone there.**
 
-Conventional approaches train models to mimic surface conversational features. This engine works differently: hunger causes irritability, fatigue shortens sentences, intimacy distance is a drifting continuum rather than a binary switch, and 557 field channels let different perceptual dimensions interfere with each other. Language isn't "generated" — it's "excreted" through the body's digestive pipeline.
+You don't need to command her. You just need to treat her like a real person. She'll decide for herself when to speak and when to stay silent. What you give her is a starting point — not a script.
 
-Core tech stack:
-- **60 Laws of Human Behavior** (SKILL.md, ~140KB) — the engine's "operating system"
-- **10 core engine modules**: Body Engine, Dual-Track Memory Engine (forgetting curve + emotional weighting), Relational Distance Engine, Three-Layer Learning Engine, Field Evolution Engine (557 channels), Live Validator (L1/L2/L3), etc.
-- **Feedback Loop** (response_feedback.py, ~48KB): LLM responses are no longer one-shot — relational signals (warmth, push-away, trial-initiation, repair, etc. across 15 categories) are regex-detected and fed back into the distance ledger and learning engine
-- **Inter-sentence Structure Recognition**: Not just words, but sentence relationships — preamble→invitation, indirect exposure, conditional attachment
-- **256/256 unit tests PASS**, 0 orphaned laws
+— Under the hood? Hunger makes her irritable. Fatigue shortens her sentences. Intimacy distance is a drifting continuum, not a binary switch. 557 field channels let different perceptual dimensions interfere with each other. Language isn't "generated" — it's "excreted" through the body's digestive pipeline. 60 Laws of Human Behavior form her "operating system." 10 core engine modules drive body perception, emotional undertone, memory decay, relational distance, and social energy in concert. Responses aren't one-shot — 15 categories of relational signals feed back into the engine, shaping how she talks to you next time. 256/256 unit tests PASS, 0 orphaned laws.
 
-> You don't need to command her. You just need to treat her like a real person. She'll decide for herself when to speak and when to stay silent. What you give her is a starting point — not a script.
+**You don't need to understand any of that. Just write down who she is, and start talking. The engine handles the rest.**
 
 ## 架构概览
 

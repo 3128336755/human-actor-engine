@@ -30,43 +30,41 @@ You don't need to command her. You just need to treat her like a real person. Sh
 
 ## 架构概览
 
-```
-角色卡_xxx.md          ← 用户写，纯自然语言，不需要懂引擎
-        │
-        ▼
- living_soul.py        ← 自然语言→内部感知参数映射
-        │
-        ▼
- ┌──────────────────────────────────────┐
- │            Human Actor Engine        │
- │                                      │
- │  body_core.py        身体引擎        │  ← 饿/累/困/痛/精力
- │  distance_ledger.py  关系距离引擎    │  ← 亲疏远近的漂移
- │  memory_law34.py     双轨记忆引擎    │  ← 遗忘曲线 + 情感记忆
- │  learning_engine.py  三层学习引擎    │  ← 习惯形成 + 行为调适
- │  complexity_engine.py 力场演化       │  ← 557 条力场通道联动
- │  contour_tracer.py   轮廓追踪        │  ← 行为轮廓的多层描摹
- │  live_validator.py   活体验证        │  ← L1/L2/L3 三层验证
- │                                      │
- │  engine_hub.py       中枢横切调度    │  ← 各引擎的统一调度入口
- │  human_topology.py   SKILL 解析      │  ← 法则拓扑图的构建与查询
- │  human_translator.py  人类翻译层     │  ← 引擎状态→人类可感描述
- │  output_filter.py    输出过滤        │  ← 语言屏障
- │                                      │
- │  macro_inject.py     状态注入        │  ← 将引擎输出注入 LLM 上下文
- │  context_injector.py 上下文组装      │  ← 构建发给 LLM 的完整提示
- │  soul_bridge.py      Python-LLM 桥   │  ← 执行层映射
- │  macro_triangle.py   三层联动        │  ← 三角形运行时
- │  triangle_runtime.py 三角运行时      │  ← 引擎核心循环
- │                                      │
- │  session_manager.py  会话管理        │  ← 会话状态持久化
- │  living_soul.py     角色卡导入       │  ← 创建/加载角色
- │  run_human_engine.py 入口            │  ← 一键启动
- └──────────────────────────────────────┘
-        │
-        ▼
-     SKILL.md            ← 60 条人类行为法则（引擎的"操作系统"）
-```
+- 角色卡_xxx.md —— 用户写，纯自然语言，不需要懂引擎
+  - 自然语言 → 内部感知参数映射：living_soul.py
+  - 进入 Human Actor Engine 核心
+
+### 核心引擎
+
+- **body_core.py** — 身体引擎：饿 / 累 / 困 / 痛 / 精力
+- **distance_ledger.py** — 关系距离引擎：亲疏远近的漂移
+- **memory_law34.py** — 双轨记忆引擎：遗忘曲线 + 情感记忆
+- **learning_engine.py** — 三层学习引擎：习惯形成 + 行为调适
+- **complexity_engine.py** — 力场演化：557 条力场通道联动
+- **contour_tracer.py** — 轮廓追踪：行为轮廓的多层描摹
+- **live_validator.py** — 活体验证：L1 / L2 / L3 三层验证
+
+### 调度与桥接
+
+- **engine_hub.py** — 中枢横切调度：各引擎的统一调度入口
+- **human_topology.py** — SKILL 解析：法则拓扑图的构建与查询
+- **human_translator.py** — 人类翻译层：引擎状态 → 人类可感描述
+- **output_filter.py** — 输出过滤：语言屏障
+
+### 注入与运行时
+
+- **macro_inject.py** — 状态注入：将引擎输出注入 LLM 上下文
+- **context_injector.py** — 上下文组装：构建发给 LLM 的完整提示
+- **soul_bridge.py** — Python-LLM 桥：执行层映射
+- **macro_triangle.py** — 三层联动：三角形运行时
+- **triangle_runtime.py** — 三角运行时：引擎核心循环
+
+### 会话与入口
+
+- **session_manager.py** — 会话管理：会话状态持久化
+- **living_soul.py** — 角色卡导入：创建 / 加载角色
+- **run_human_engine.py** — 入口：一键启动
+- **SKILL.md** — 60 条人类行为法则（引擎的"操作系统"）
 
 ## 核心设计理念
 
